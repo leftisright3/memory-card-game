@@ -1,0 +1,10 @@
+<div *ngIf="cards.length > 0" class="">
+
+  <div class="" style="width: 100%; margin-bottom: 0.5em; padding-left: .8em" *ngFor="let row of [0,1,2,3]">
+    <span *ngFor="let card of (row !== 0 ? cards.slice(row*13, (row+1)*13) : cards.slice(row, 13))">
+      <img *ngIf="card.flipped" [src]="card.image" style="width: 7.35%; height: 35%">
+      <img *ngIf="!card.flipped" src="../../assets/playing-card-back.png" style="width: 7.35%; height: 35%" (click)="executeGameRules(card)">
+    </span>
+  </div>
+
+</div>

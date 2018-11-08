@@ -1,0 +1,14 @@
+<div class="container-fluid" style="margin-bottom: 2em;">
+  <div class="row">
+    <button class="btn btn-primary pull-left" (click)="shuffle()">New Game</button>
+    <span class="animate fade"></span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <img class="mx-auto" *ngIf="loading" src="../../assets/spinner.gif" />
+  </div>
+</div>
+
+<app-card-detail [cards]="cards" *ngIf="!loading"></app-card-detail>
